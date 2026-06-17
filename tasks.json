@@ -1,0 +1,38 @@
+[
+    {
+        "title": "Train KrishiMitram voice model",
+        "status": "Pending",
+        "tags": [
+            "ml",
+            "pytorch",
+            "audio"
+        ],
+        "metadata": {
+            "priority": "Critical",
+            "epochs": 50
+        }
+    },
+    {
+        "title": "Refactor EduGuard React frontend",
+        "status": "Completed",
+        "tags": [
+            "frontend",
+            "typescript"
+        ],
+        "metadata": {
+            "priority": "Medium",
+            "assignee": "team"
+        }
+    },
+    {
+        "title": "Configure AWS EC2 instance",
+        "status": "Pending",
+        "tags": [
+            "infrastructure",
+            "cloud"
+        ],
+        "metadata": {
+            "priority": "High"
+        }
+    }
+]
