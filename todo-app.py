@@ -1,5 +1,17 @@
 import time
 
+def auto_save(func):
+    def wrapper(self, *args, **kwargs):
+
+        result = func(self, *args, **kwargs)
+
+        self.save_tasks()
+
+        print("Tasks auto-saved")
+
+        return result
+
+    return wrapper
 
 # ---------------- DECORATOR ----------------
 def timer(func):
@@ -33,6 +45,7 @@ class TodoApp:
         self.tasks = []
 
     # ---------- *args ----------
+    @auto_save
     def add_tasks(self, *titles):
         for title in titles:
             self.tasks.append(Task(title))
@@ -53,10 +66,11 @@ class TodoApp:
         for index, task in enumerate(self.get_tasks(), start=1):
             print(f"{index}. {task}")
 
+    @auto_save
     def complete_task(self, index):
         if 0 <= index < len(self.tasks):
             self.tasks[index].completed = True
-
+    @auto_save
     def delete_task(self, index):
         if 0 <= index < len(self.tasks):
             self.tasks.pop(index)
